@@ -11,8 +11,8 @@ package("redex")
 
     add_deps("cmake")
     -- add_deps("python 3.x", {kind = "binary"})
-    add_deps("boost 1.78.0", {configs = {
-        system = false ,
+    add_deps("boost 1.79.0", {configs = {
+        system = false,
         regex = true,
         thread = true,
         iostreams = true,
