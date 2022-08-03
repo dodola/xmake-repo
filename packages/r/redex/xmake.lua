@@ -21,6 +21,7 @@ package("redex")
 
     add_includedirs("include/redex/libredex",
                     "include/redex/libresource",
+                    "include/redex/liblocator",
                     "include/redex/shared",
                     "include/redex/sparta",
                     "include/redex/tools",
