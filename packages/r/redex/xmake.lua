@@ -21,7 +21,6 @@ package("redex")
 
     add_includedirs("include/redex/libredex",
                     "include/redex/libresource",
-                    "include/redex/liblocator",
                     "include/redex/shared",
                     "include/redex/sparta",
                     "include/redex/tools",
@@ -31,6 +30,8 @@ package("redex")
                     "include/redex/service")
 
     on_install("linux", "macosx", function (package)
+        os.cp("liblocator/*.h", package:installdir("include/redex/liblocator/"))
+
         -- fix find boost issue, @see https://github.com/microsoft/vcpkg/issues/5936
         local configs = {"-DBoost_NO_BOOST_CMAKE=ON"}
         table.insert(configs, "-DCMAKE_BUILD_TYPE=" .. (package:debug() and "Debug" or "Release"))
